@@ -32,55 +32,20 @@
   <build>
     <plugins>
       <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-enforcer-plugin</artifactId>
-      <version>3.6.1</version> <!-- Use the latest stable version -->
-      <executions>
-        <execution>
-          <id>enforce-rules</id>
-          <goals>
-            <goal>enforce</goal>
-          </goals>
-          <configuration>
-            <rules>              
-              <requireMavenVersion>
-                <version>[3.8,)</version> <!-- Require Maven 3.8 or higher -->
-              </requireMavenVersion>
-              <requireJavaVersion>
-                <version>[1.8,)</version> <!-- Require Java 8 or higher -->
-              </requireJavaVersion>
-              <bannedPlugins>
-                <excludes>
-                  <exclude>org.apache.maven.plugins:maven-verifier-plugin</exclude>
-                </excludes>
-                <message>Please consider using the maven-invoker-plugin instead.</message>
-              </bannedPlugins>
-              <requireOS>
-                <family>windows</family> <!-- Example: require Windows OS -->
-              </requireOS>
-            </rules>
-            <fail>true</fail> <!-- Fail build if rules are broken -->
-          </configuration>
-        </execution>
-      </executions>
-    </plugin>
-  </plugins>
-    <plugins>
-      <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>1.7</source>
+          <target>1.7</target>
         </configuration>
       </plugin>
-                             <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-war-plugin</artifactId>
-                            <version>3.4.0</version>
-                            <configuration>
-                                <failOnMissingWebXml>false</failOnMissingWebXml>
-                            </configuration>
-                       </plugin>
+                    <plugin>
+                   <groupId>org.apache.maven.plugins</groupId>
+                   <artifactId>maven-war-plugin</artifactId>
+                   <version>3.3.2</version>
+                   <configuration>
+                       <failOnMissingWebXml>false</failOnMissingWebXml>
+                   </configuration>
+              </plugin>
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
         <configuration>
